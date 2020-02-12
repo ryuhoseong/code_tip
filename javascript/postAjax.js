@@ -6,28 +6,21 @@ function postAjaxForm(formObj, action){
     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
-  var fd = new FormData(formObj);
-
-  xmlhttp.onreadystatechange=function() {
+  xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-      //rs 영향받은 행 수
-      var rs = xmlhttp.responseText;
-      if (rs == 1){
-        alert("수정 되었습니다.");
-      }else if(rs == "insert"){
-        location.reload(true);
-      }else{
-
-      }
+      //alert("전송완료");
+    }else{
+      //alert("전송실패");
     }
   }
 
   //catch errors
   xmlhttp.onerror = function (e){
     console.error(xmlhttp.statusText);
-  };
+  }
 
   xmlhttp.open("POST", action);
-
-  xmlhttp.send(fd);
+  xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  //xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=euc-kr");
+  xmlhttp.send(formObj);
 };
