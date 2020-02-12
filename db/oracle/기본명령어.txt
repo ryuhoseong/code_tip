@@ -1,0 +1,29 @@
+1. 현재 접속한 유저확인
+  show user
+
+2. 계정생성:sys로
+  create user [계정명] identified by [비번] default tablespace users;
+
+3. 권한주기
+  GRANT CONNECT, CREATE VIEW, RESOURCE TO INSAMAN;
+
+4. 현재 계정의 테이블 확인
+  SELECT * FROM TAB;
+
+
+[설명] SQL 파일로 저장 1
+SYS@testdb> save filename     // filename.sql 파일을 현재 디렉토리에 저장
+SYS@testdb> save /doc/filename   // /doc/filename.sql 디렉토리에 저장(절대경로)
+
+[설명] SQL 파일로 저장 2
+SYS@testdb> spool filename.txt     // filename.txt 현재 시점 부터 화면 내용 저장
+SYS@testdb> spool off                 // filename.txt 저장 해제
+
+[설명] SQL 스크립트 수행
+SYS@testdb> @script             // 현재 디렉토리의 script.sql을 수행 합니다.
+
+[설명] 명령어를 화면에 Display
+SYS@testdb> set echo [On/Off]   // on, off 따라 다릅니다.
+
+[설명] SQL 수행 시간
+SYS@testdb> set timing [on/off]   // sql문장이 처리되는 시간을 표시 기본값은 off
