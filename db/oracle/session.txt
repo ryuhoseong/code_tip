@@ -1,0 +1,9 @@
+--현재 세션
+SELECT status,COUNT(*) FROM v$session
+WHERE username='HNDMS'
+GROUP BY status
+;
+
+-- current 현재 연결된 세션 숫자
+-- HIGHWATER 현재 세션에서 최대 세션숫자
+SELECT * FROM v$LICENSE

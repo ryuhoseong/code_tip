@@ -3,10 +3,10 @@ START WITH 1 INCREMENT BY 50
 
 DROP SEQUENCE 시퀀스명
 
-//현재 시퀀스
+--현재 시퀀스
 SELECT 시퀀스명.CURRVAL FROM DUAL
 
-//다음 시퀀스
+--다음 시퀀스
 SELECT 시퀀스명.NEXTVAL FROM DUAL
 
 SELECT *
