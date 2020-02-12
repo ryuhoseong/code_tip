@@ -1,0 +1,1 @@
+var i =  Array.prototype.indexOf.call(codeChilds, targetObj);
