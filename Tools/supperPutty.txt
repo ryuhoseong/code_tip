@@ -1,0 +1,2 @@
+--자동로그인
+extra putty arguments: -pw [password]
