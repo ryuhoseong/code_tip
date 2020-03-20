@@ -1,0 +1,2 @@
+--파일내용 합치기
+For %f in (*.txt) do type "%f" >> Combined.txt & echo. >> Combined.txt
