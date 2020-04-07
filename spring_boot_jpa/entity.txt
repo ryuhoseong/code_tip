@@ -1,0 +1,13 @@
+방안1)
+EmbeddableId 를 동일하게 맞춤
+
+@AttributeOverrides(value = {
+                          @AttributeOverride(name = "areaCode", column = @Column(name = "AREA_CODE")),
+                          @AttributeOverride(name = "phNumber", column = @Column(name = "PH_NUMBER"))
+                          })
+
+@OneToOne
+@JoinColumns({
+			@JoinColumn(name = "areaCode"),
+			@JoinColumn(name = "phNumber")
+})
